@@ -1,0 +1,272 @@
+:root {
+  --main-bg: Gainsboro;
+  --main-text: #30353d;
+  --accent: DodgerBlue;
+  --danger: tomato;
+  --container-bg: #fff;
+  --border: Gainsboro;
+  --btn-bg: Gainsboro;
+  --btn-hover: DodgerBlue;
+  --btn-text: #30353d;
+  --shadow: 0 0 20px Gainsboro;
+}
+
+body.dark {
+  --main-bg: #30353d;
+  --main-text: Gainsboro;
+  --accent: DodgerBlue;
+  --danger: tomato;
+  --container-bg: #30353d;
+  --border: DodgerBlue;
+  --btn-bg: #30353d;
+  --btn-hover: DodgerBlue;
+  --btn-text: Gainsboro;
+  --shadow: 0 0 20px #30353d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body {
+  background: var(--main-bg);
+  color: var(--main-text);
+  padding: 2rem;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.1);
+padding: .5rem 1rem 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  position: relative;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--main-text);
+}
+h2 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+section {
+  margin-top: 2rem;
+}
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+}
+li {
+  margin-bottom: 0.4rem;
+}
+li[data-popup] {
+  position: relative;
+}
+.label {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+  color: var(--accent);
+}
+.lang-toggle {
+  float: right;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+}
+.lang-toggle button {
+  background: var(--accent);
+  color: Gainsboro;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 20%;
+  transition: background 0.2s;
+}
+.lang-toggle button:hover {
+  background: var(--danger);
+}
+.hidden {
+  display: none;
+}
+
+.download-btn {
+  display: block;
+  width: max-content;
+  margin: 3rem auto 0;
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: Gainsboro;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s;
+  border: none;
+}
+.download-btn:hover {
+  background: var(--danger);
+}
+
+.contact {
+  position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+  width: 260px;
+  background: var(--btn-bg);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  font-size: 0.98rem;
+  z-index: 100;
+  color: var(--main-text);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 900px) {
+  .contact {
+    position: static;
+    width: auto;
+    margin-top: 2rem;
+    box-shadow: none;
+    background: none;
+    padding: 0;
+    border: none;
+  }
+}
+
+
+
+.contact a:hover {
+    color: var(--danger);
+    text-decoration: none;
+}
+
+
+.skills-list {
+  font-size: 0.95em;
+  color: var(--main-text);
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.skills-list li {
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+
+.show-more-btn {
+  margin: 10px 0 10px 0;
+  padding: 0.3em 1em;
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: var(--btn-text);
+  transition: background 0.2s, color 0.2s;
+}
+.show-more-btn:hover {
+  background: var(--btn-hover);
+  color: Gainsboro;
+}
+.more-skills {
+  margin-top: 0.5em;
+  padding-left: 6%;
+}
+
+.theme-toggle-btn {
+  margin-left: 10px;
+  background: var(--btn-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  padding: 0.4rem 0.9rem;
+  color: var(--btn-text);
+  transition: background 0.2s, color 0.2s;
+}
+.theme-toggle-btn:hover {
+  background: var(--btn-hover);
+  color: Gainsboro;
+}
+
+.lang-btn {
+  background: var(--accent);
+  color: Gainsboro;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 0.3em;
+  font-weight: normal;
+  transition: background 0.2s, font-weight 0.2s;
+}
+.lang-btn.active {
+  font-weight: bold;
+  background: var(--danger);
+  color: #fff;
+}
+.lang-btn:hover {
+  background: var(--danger);
+}
+
+/* Тёмная тема */
+body.dark h1, body.dark h2, body.dark .label {
+  color: Gainsboro;
+}
+
+body.dark .skills-list {
+  color: Gainsboro;
+}
+body.dark .download-btn {
+  background: var(--accent);
+  color: Gainsboro;
+}
+body.dark .download-btn:hover {
+  background: var(--danger);
+}
+body.dark .show-more-btn, body.dark .theme-toggle-btn {
+  background: var(--btn-bg);
+  color: Gainsboro;
+  border: 1px solid var(--border);
+}
+body.dark .show-more-btn:hover, body.dark .theme-toggle-btn:hover {
+  background: var(--btn-hover);
+  color: Gainsboro;
+}
+
+.about p {
+  border-left: 6px solid var(--accent);
+  padding-left: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: DodgerBlue;
+}
+a:visited {
+  color: tomato;
+}
+
+#popup-tooltip {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  background: rgba(0,0,0,0.1);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
