@@ -130,6 +130,7 @@ li[data-popup] {
   z-index: 100;
   color: var(--main-text);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  opacity: 80%;
 }
 @media (max-width: 900px) {
   .contact {
