@@ -195,15 +195,26 @@
     document.addEventListener('DOMContentLoaded', function () {
       // particles.js background
       let isDark = document.body.classList.contains('dark');
-      let color = isDark ? '#fff' : '#30353d';
-      let opacity = isDark ? 0.5 : 0.2;
+      const rootStyles = getComputedStyle(document.documentElement);
+      let accent = rootStyles.getPropertyValue('--accent').trim() || '#2196f3';
+      let mainText = rootStyles.getPropertyValue('--main-text').trim() || '#fff';
+      let color = isDark ? mainText : accent;
+      // Проверка формата цвета
+      const hexOrRgb = /^#([0-9A-Fa-f]{3}){1,2}$|^rgb/;
+      if (!hexOrRgb.test(color)) {
+        color = isDark ? '#fff' : '#2196f3';
+      }
+      console.log('Цвет частиц:', color);
+      let opacity = isDark ? 0.5 : 0.5;
+      let size = isDark ? 3 : 5;
+      let number = isDark ? 60 : 80;
       particlesJS('particles-js', {
         "particles": {
-          "number": { "value": 60 },
+          "number": { "value": number },
           "color": { "value": color },
           "shape": { "type": "circle" },
           "opacity": { "value": opacity },
-          "size": { "value": 3 },
+          "size": { "value": size },
           "move": { "enable": true, "speed": 1 }
         }
       });
